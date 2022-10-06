@@ -1,15 +1,17 @@
-
 package br.senai.sp.jandira.ui;
 
-public class HomeFrame extends javax.swing.JFrame {
+import br.senai.sp.jandira.dao.PlanoDeSaudeDAO;
+import javax.swing.JTable;
 
+public class HomeFrame extends javax.swing.JFrame {
 
     public HomeFrame() {
         System.out.println("Criando a tela Home...");
         initComponents();
+        PlanoDeSaudeDAO.criarPlanosDeSaudeTeste();
+        criarTabelaPlanosDeSaude();
     }
 
- 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -108,6 +110,7 @@ public class HomeFrame extends javax.swing.JFrame {
         panelPlanosDeSaude.setBounds(0, 200, 810, 410);
 
         jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel3.setLayout(null);
 
         buttonAgenda.setBackground(new java.awt.Color(255, 204, 0));
         buttonAgenda.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 12)); // NOI18N
@@ -119,6 +122,8 @@ public class HomeFrame extends javax.swing.JFrame {
                 buttonAgendaActionPerformed(evt);
             }
         });
+        jPanel3.add(buttonAgenda);
+        buttonAgenda.setBounds(6, 23, 80, 50);
 
         buttonPacientes.setBackground(new java.awt.Color(255, 204, 0));
         buttonPacientes.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 12)); // NOI18N
@@ -130,6 +135,8 @@ public class HomeFrame extends javax.swing.JFrame {
                 buttonPacientesActionPerformed(evt);
             }
         });
+        jPanel3.add(buttonPacientes);
+        buttonPacientes.setBounds(96, 23, 80, 50);
 
         buttonMedicos.setBackground(new java.awt.Color(255, 204, 0));
         buttonMedicos.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 12)); // NOI18N
@@ -141,6 +148,8 @@ public class HomeFrame extends javax.swing.JFrame {
                 buttonMedicosActionPerformed(evt);
             }
         });
+        jPanel3.add(buttonMedicos);
+        buttonMedicos.setBounds(186, 23, 80, 50);
 
         buttonEspecialidades.setBackground(new java.awt.Color(255, 204, 0));
         buttonEspecialidades.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 12)); // NOI18N
@@ -152,8 +161,10 @@ public class HomeFrame extends javax.swing.JFrame {
                 buttonEspecialidadesActionPerformed(evt);
             }
         });
+        jPanel3.add(buttonEspecialidades);
+        buttonEspecialidades.setBounds(276, 23, 80, 50);
 
-        buttonPlanoSaude.setBackground(new java.awt.Color(255, 153, 0));
+        buttonPlanoSaude.setBackground(new java.awt.Color(255, 102, 0));
         buttonPlanoSaude.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 12)); // NOI18N
         buttonPlanoSaude.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/senai/sp/jandira/imagens/blood-donor-card.png"))); // NOI18N
         buttonPlanoSaude.setToolTipText("Planos de saúde");
@@ -163,6 +174,8 @@ public class HomeFrame extends javax.swing.JFrame {
                 buttonPlanoSaudeActionPerformed(evt);
             }
         });
+        jPanel3.add(buttonPlanoSaude);
+        buttonPlanoSaude.setBounds(366, 23, 80, 50);
 
         buttonSair.setBackground(new java.awt.Color(255, 204, 0));
         buttonSair.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 12)); // NOI18N
@@ -174,39 +187,8 @@ public class HomeFrame extends javax.swing.JFrame {
                 buttonSairActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(buttonAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(buttonPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(buttonMedicos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(buttonEspecialidades, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(buttonPlanoSaude, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(260, 260, 260)
-                .addComponent(buttonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonAgenda, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonPacientes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonMedicos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonEspecialidades, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonPlanoSaude, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
+        jPanel3.add(buttonSair);
+        buttonSair.setBounds(706, 23, 80, 50);
 
         getContentPane().add(jPanel3);
         jPanel3.setBounds(0, 100, 810, 100);
@@ -247,7 +229,6 @@ public class HomeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonEditarPlanoDeSaudeActionPerformed
 
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonAdicionarPlanoDeSaude;
     private javax.swing.JButton buttonAgenda;
@@ -266,4 +247,27 @@ public class HomeFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane scrollTablePlanosDeSaude;
     private javax.swing.JTable tablePlanosDeSaude;
     // End of variables declaration//GEN-END:variables
+
+    private void criarTabelaPlanosDeSaude() {
+        
+        tablePlanosDeSaude.setModel(PlanoDeSaudeDAO.getTableModel());
+        
+        //Desaticar o dimensionamneto da JTable
+        
+        tablePlanosDeSaude.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        
+        //Definir a largura de cada coluna
+        
+        tablePlanosDeSaude.getColumnModel().getColumn(0).setPreferredWidth(100);
+        tablePlanosDeSaude.getColumnModel().getColumn(1).setPreferredWidth(300);
+        tablePlanosDeSaude.getColumnModel().getColumn(2).setPreferredWidth(300);
+        
+        // Impedir a movimentação das colunas
+        
+        tablePlanosDeSaude.getTableHeader().setReorderingAllowed(false);
+        
+        //Impedir a edição das linhas/linhas
+        
+        tablePlanosDeSaude.setDefaultEditor(Object.class, null);
+    }
 }
